@@ -1,1 +1,20 @@
-<p>catmenu works!</p>
+<div class="row">
+    <div class="column">
+<nav class="navigation">
+    <ul class="mainmenu">
+      <li><a [routerLink]="">Breeds</a>
+        <ul class="submenu">
+            <div *ngFor="let item of catBreeds">
+                <li><a [routerLink]="" (click)="selectBreed(item)">{{item.name}}</a></li>
+            </div>
+          
+        </ul>
+      </li>      
+    </ul>
+  </nav>
+</div>
+<div class="column">
+  <div *ngIf="selectedBreed[0]">
+    {{selectedBreed[0].name}}
+</div>
+</div>
