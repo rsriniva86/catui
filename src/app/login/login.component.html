@@ -1,5 +1,5 @@
 <form>
-  <div class="container">
+  <div class="container" *ngIf="!isLoggedIn || !isLoginValid">
     <div class="form-field">
       <label for="username" class="lbl">Username</label>
       <input type="text" [(ngModel)]="username" placeholder="Enter Username" name="username" required>
