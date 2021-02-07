@@ -1,0 +1,20 @@
+<form>
+  <div class="container">
+    <div class="form-field">
+      <label for="username" class="lbl">Username</label>
+      <input type="text" [(ngModel)]="username" placeholder="Enter Username" name="username" required>
+    </div>
+    <div class="form-field">
+      <label for="password" class="lbl">Password</label>
+      <input type="password" [(ngModel)]="password" placeholder="Enter Password" name="password" required>
+    </div>
+    <div class="btn-container">
+      <button class="btn" (click)="login()">Login</button>
+    </div>
+    <div class="error" *ngIf="!isLoginValid">
+      Invalid login credentials
+    </div>
+
+  </div>
+
+</form>

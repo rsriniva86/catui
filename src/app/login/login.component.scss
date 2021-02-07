@@ -1,0 +1,27 @@
+.container{
+    width: 300px;
+    font-size: 16px;
+    .form-field {
+        padding: 5px;
+        .lbl{
+            display: inline-block;
+            width: 100px;
+            margin-right: 20px;
+        }
+    }  
+    .btn-container{
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+        margin-right: 20px;      
+    }
+    .btn{
+        color: white;
+        background-color: darkgrey;
+        border-radius: 3px;
+        text-align: center;       
+    } 
+    .error{
+        color: red;
+    }
+} 
