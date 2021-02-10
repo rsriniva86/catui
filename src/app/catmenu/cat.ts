@@ -1,3 +1,4 @@
 export interface cat {
-    name: string;    
+    name: string;
+    id:string;    
   }

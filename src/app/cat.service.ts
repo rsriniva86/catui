@@ -10,7 +10,11 @@ export class CatService {
   constructor(private http:HttpClient) {
 
    }
-   public getCatBreeds():Observable<any>{
+   public getBreeds():Observable<any>{
       return this.http.get('https://api.thecatapi.com/v1/breeds');            
    }
+   public getDetailsOfBreed(breedID:string):Observable<any>{
+    return this.http.get('https://api.thecatapi.com/v1/images/search?breed_id='+breedID);            
+ }
+
 }
