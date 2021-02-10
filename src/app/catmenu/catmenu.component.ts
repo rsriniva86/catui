@@ -40,13 +40,14 @@ export class CatmenuComponent implements OnInit {
     this.selectedBreed = [breed];
     console.log(this.selectedBreed[0].name);
     this.isBreedSelected = true;
+    this.selectedCatBreedInfo = [];
     this.service.getDetailsOfBreed(breed.id).subscribe(
       (responseData) => {
         console.log(responseData);
         this.selectedCatBreedInfo = responseData;
         let imageURL = this.selectedCatBreedInfo[0].url;
         this.catimageheight = 500 * (this.selectedCatBreedInfo[0].height /
-          this.selectedCatBreedInfo[0].width);
+        this.selectedCatBreedInfo[0].width);
         this.catimageid = this.selectedCatBreedInfo[0].id;
         this.catimage = this.sanitizer.bypassSecurityTrustUrl(imageURL);
         console.log('image url:' + this.selectedCatBreedInfo[0].url);

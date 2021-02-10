@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="column">
+  <div class="columnOne">
     <nav class="navigation">
       <ul class="mainmenu">
         <li><a [routerLink]="">Breeds</a>
@@ -12,17 +12,30 @@
       </ul>
     </nav>
   </div>
-  <div class="column" align="left">
+  <div class="columnTwo" align="left">
     <div *ngIf="selectedBreed[0] && selectedCatBreedInfo[0]">
-      <img id="myimage" [src]='catimage' [width]=500 [height]='catimageheight' [alt]='catimageid' />
-      <h2>Description</h2><br>
-      <p>{{selectedCatBreedInfo[0].breeds[0].description}}</p><br>
-      <h2>Child Friendliness Score</h2><br>
-      {{selectedCatBreedInfo[0].breeds[0].child_friendly}}
-      <h2>Hospital URL</h2><br>
-      {{selectedCatBreedInfo[0].breeds[0].vcahospitals_url}}
-      <h2>Wikipedia Link</h2><br>
-      {{selectedCatBreedInfo[0].breeds[0].wikipedia_url}}
-      
+      <h1>{{selectedCatBreedInfo[0].breeds[0].name}}</h1>
+      <table border="1" style="width: 60%">
+        <colgroup>
+           <col span="1" style="width: 45%;">
+           <col span="1" style="width: 5%;">
+           <col span="1" style="width: 5%;">
+           <col span="1" style="width: 5%;">
+        </colgroup>
+        <tr>
+          <th>Description</th>
+          <th>Child Friendliness Score</th>
+          <th>Hospital URL</th>
+          <th>Wikipedia URL</th>
+        </tr>
+        <tr>
+          <td>{{selectedCatBreedInfo[0].breeds[0].description}}</td>
+          <td>{{selectedCatBreedInfo[0].breeds[0].child_friendly}}</td>
+          <td><a href="{{selectedCatBreedInfo[0].breeds[0].vcahospitals_url}}">{{selectedCatBreedInfo[0].breeds[0].vcahospitals_url}}</a></td>
+          <td><a href="{{selectedCatBreedInfo[0].breeds[0].wikipedia_url}}">{{selectedCatBreedInfo[0].breeds[0].wikipedia_url}}</a></td>
+        </tr>
+        
+      </table>   
+      <img id="myimage" [src]='catimage' [width]=500 [height]='catimageheight' [alt]='catimageid' />      
     </div>
   </div>

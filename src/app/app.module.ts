@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CatmenuComponent } from './catmenu/catmenu.component';
 import { CatService } from './cat.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CatService } from './cat.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [CatService],
+  providers: [CatService,
+              AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
