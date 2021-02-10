@@ -7,14 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class CatService {
 
+  private baseurl='https://api.thecatapi.com/v1';
+
   constructor(private http:HttpClient) {
 
    }
    public getBreeds():Observable<any>{
-      return this.http.get('https://api.thecatapi.com/v1/breeds');            
+      return this.http.get(`${this.baseurl}/breeds`);            
    }
    public getDetailsOfBreed(breedID:string):Observable<any>{
-    return this.http.get('https://api.thecatapi.com/v1/images/search?breed_id='+breedID);            
+    return this.http.get(`${this.baseurl}/images/search?breed_id=${breedID}`);            
  }
 
 }

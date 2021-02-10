@@ -12,30 +12,43 @@
       </ul>
     </nav>
   </div>
-  <div class="columnTwo" align="left">
-    <div *ngIf="selectedBreed[0] && selectedCatBreedInfo[0]">
+  <div *ngIf="selectedBreed[0] && selectedCatBreedInfo[0]">
+
+    <div class="columnTwo" align="left">
       <h1>{{selectedCatBreedInfo[0].breeds[0].name}}</h1>
-      <table border="1" style="width: 60%">
-        <colgroup>
-           <col span="1" style="width: 45%;">
-           <col span="1" style="width: 5%;">
-           <col span="1" style="width: 5%;">
-           <col span="1" style="width: 5%;">
-        </colgroup>
+      <div class="imgcontainer">
+        <img id="myimage" [src]='catimage' [alt]='catimageid' />
+      </div>
+      <table class="catdetails">
         <tr>
           <th>Description</th>
+        </tr>
+        <tr class="description">
+          <td>{{selectedCatBreedInfo[0].breeds[0].description}}</td>
+        </tr>
+        <tr>
           <th>Child Friendliness Score</th>
+        </tr>        
+        <tr>
+          <td>{{selectedCatBreedInfo[0].breeds[0].child_friendly}}</td>
+        </tr>
+        <tr *ngIf="selectedCatBreedInfo[0].breeds[0].vcahospitals_url">
           <th>Hospital URL</th>
+        </tr>
+        <tr *ngIf="selectedCatBreedInfo[0].breeds[0].vcahospitals_url">
+          <td><a
+              href="{{selectedCatBreedInfo[0].breeds[0].vcahospitals_url}}">{{selectedCatBreedInfo[0].breeds[0].vcahospitals_url}}</a>
+          </td>
+        </tr>
+        <tr>
           <th>Wikipedia URL</th>
         </tr>
         <tr>
-          <td>{{selectedCatBreedInfo[0].breeds[0].description}}</td>
-          <td>{{selectedCatBreedInfo[0].breeds[0].child_friendly}}</td>
-          <td><a href="{{selectedCatBreedInfo[0].breeds[0].vcahospitals_url}}">{{selectedCatBreedInfo[0].breeds[0].vcahospitals_url}}</a></td>
-          <td><a href="{{selectedCatBreedInfo[0].breeds[0].wikipedia_url}}">{{selectedCatBreedInfo[0].breeds[0].wikipedia_url}}</a></td>
+          <td><a
+              href="{{selectedCatBreedInfo[0].breeds[0].wikipedia_url}}">{{selectedCatBreedInfo[0].breeds[0].wikipedia_url}}</a>
+          </td>
         </tr>
-        
-      </table>   
-      <img id="myimage" [src]='catimage' [width]=500 [height]='catimageheight' [alt]='catimageid' />      
+      </table>
     </div>
   </div>
+</div>

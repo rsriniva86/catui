@@ -65,7 +65,7 @@ html, body {
 
   .row{
     display: grid;
-    grid-template-columns: 18% 82%; /*columns widths*/
+    grid-template-columns: 18% 82% ; /*columns widths*/
   }
   .columnTwo {
     padding-left: 5px;
@@ -76,4 +76,27 @@ html, body {
     content: "";
     display: table;
     clear: both;
+  }
+
+  .catdetails{
+    width: 500px;
+    text-align: left;
+    font-size: 120%;
+
+  }
+  .catdetails td{
+    padding: 5px;
+  }
+  .imgcontainer{
+    width: 500px;
+    height: 400px;
+  }
+
+  .imgcontainer img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .description{
+    line-height: 150%;    
+    text-align:justify;
   }
