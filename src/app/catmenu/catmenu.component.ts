@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CatService } from '../cat.service';
-import { cat } from './cat';
-import { catinfo } from './catinfo';
+import { CatIdentifiers } from './catinterfaces';
+import { CatInfo } from './catinterfaces';
 
 @Component({
   selector: 'app-catmenu',
@@ -13,17 +13,13 @@ export class CatmenuComponent implements OnInit {
 
   catBreeds: any;
   isBreedSelected: boolean;
-  selectedBreed: cat[] = [];
-  selectedCatBreedInfo: catinfo[] = []
+  selectedBreed: CatIdentifiers[] = [];
+  selectedCatBreedInfo: CatInfo[] = []
   catimage: any;
-  catimageheight: number;
-  catimagewidth: number;
   catimageid: string;
 
   constructor(private service: CatService, private sanitizer: DomSanitizer) {
     this.isBreedSelected = false;
-    this.catimageheight = 0;
-    this.catimagewidth = 0;
     this.catimageid = "";
   }
 
@@ -36,7 +32,7 @@ export class CatmenuComponent implements OnInit {
     );
   }
 
-  public selectBreed(breed: cat): void {
+  public selectBreed(breed: CatIdentifiers): void {
     this.selectedBreed = [breed];
     console.log(this.selectedBreed[0].name);
     this.isBreedSelected = true;
@@ -46,8 +42,6 @@ export class CatmenuComponent implements OnInit {
         console.log(responseData);
         this.selectedCatBreedInfo = responseData;
         let imageURL = this.selectedCatBreedInfo[0].url;
-        this.catimageheight = 500 * (this.selectedCatBreedInfo[0].height /
-        this.selectedCatBreedInfo[0].width);
         this.catimageid = this.selectedCatBreedInfo[0].id;
         this.catimage = this.sanitizer.bypassSecurityTrustUrl(imageURL);
         console.log('image url:' + this.selectedCatBreedInfo[0].url);
