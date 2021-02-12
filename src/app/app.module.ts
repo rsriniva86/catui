@@ -21,8 +21,10 @@ import { AuthService } from './auth.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [CatService,
-              AuthService],
+  providers: [
+    CatService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

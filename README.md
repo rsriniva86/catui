@@ -1,5 +1,15 @@
 # Catui
 
+##This Webapp provides a simple login page.
+##once logged in, it will provide left menu with list of cat breeds.
+##upon clicking of a particular breed, on the main view of the web page, it will display 
+###breed name
+###image of the cat
+###description
+###child friendliness score
+###hospital url (if available)
+###wikipedia url
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
 
 ## Development server
